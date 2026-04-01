@@ -1,4 +1,4 @@
-import type { LogEntry } from "../types/log.types";
+import { LogLevel, type LogEntry } from "../types/log.types";
 
 export class Store {
     private totalLogEntries: number = 0;
@@ -9,5 +9,8 @@ export class Store {
     public addLogEntry(entry: LogEntry): void {
         this.logs.push(entry);
         this.totalLogEntries++; 
+        if(entry.level === LogLevel.ERROR) {
+            this.errorCount++;
+        }
     }
 }
