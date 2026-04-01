@@ -7,7 +7,3 @@
 [2026-04-01 09:20:33] [ERROR] Failed to write to disk: Permission Denied at /var/logs/
 [2026-04-01 09:22:10] [WARN] API Rate limit approaching for IP 192.168.1.1
 [2026-04-01 09:25:00] [INFO] Daily backup completed successfully.
-[2026-04-01 09:30:45] [ERROR] Unhandled exception in 'PaymentService': NullReferenceException
-[2026-04-01 09:35:12] [INFO] User 'john_doe' logged out.
-[2026-04-01 09:40:00] [WARN] Disk space low: 10% remaining on /dev/sda1
-[2026-04-01 09:45:30] [INFO] System shutdown initiated by admin 'ali_dev'.

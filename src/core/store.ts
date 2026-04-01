@@ -13,4 +13,7 @@ export class Store {
             this.errorCount++;
         }
     }
+    public getLogs(): LogEntry[] {
+        return this.logs;
+    }
 }
