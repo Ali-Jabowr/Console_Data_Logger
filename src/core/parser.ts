@@ -1,4 +1,4 @@
-import {Readable, Writable} from 'stream';
+import {Readable} from 'stream';
 import * as fs from 'fs';
 import * as readline from 'readline';
 import type { Store } from './store';
@@ -20,7 +20,7 @@ export class Logparser extends Readable {
                 crlfDelay: Infinity
             });
             for await (const line of rl){
-                const logRegex = /^\[(.+?)\]\s+(\w+):\s+(.*)$/;
+                const logRegex = /^\[.+?\]\s+\[(INFO|WARN|ERROR)\]\s+(.*)$/;
                 const match = line.match(logRegex);
                 if(match){
                     const logentry: LogEntry = {
