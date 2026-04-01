@@ -2,12 +2,16 @@ import { watch } from "fs";
 import { Logparser } from "./core/parser.js";
 import { Logwatcher } from "./core/watcher.js";    
 import { Store } from "./core/store.js";
+import { LogServer } from "./server/http-server.js";
 import * as path from 'path';
 
 
 const store = new Store();
 const watcher = new Logwatcher('./logs'); // Watch the 'logs' directory for new .log files
 const parser = new Logparser(store);
+const httpServer = new LogServer(3000, store);
+
+httpServer.start();
 
 watcher.on('file-added', async (filePath: string) =>{
     console.log(`New log file added: ${filePath}`);
